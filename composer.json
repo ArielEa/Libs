@@ -1,0 +1,22 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "MethodRequest\\": "src/"
+        },
+        "files": [
+            "app/Helper/error.php"
+        ]
+    },
+    "require": {
+        "psr/http-message": "^1.0",
+        "php-http/client-common": "^2.3",
+        "sendgrid/php-http-client": "^3.14",
+        "guzzlehttp/guzzle": "^7.3"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
