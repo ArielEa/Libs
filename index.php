@@ -33,6 +33,9 @@ class script
     public function init()
     {
         try {
+            if ( empty($_GET) ) {
+                throw new IoException("请输入信息", 1001);
+            }
             $value = $_GET[self::$argument];
             $this->methodName = MethodExplain::getMethodName($value);
             if (isset($_GET[self::$print])) {
