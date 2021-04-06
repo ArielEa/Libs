@@ -59,6 +59,7 @@ class script
         return new IoResponse($this->methodName);
     }
 }
-parse_str(implode('&', array_slice($argv, 1)), $_GET);
-
+if (php_sapi_name() == 'cli') {
+    parse_str(implode('&', array_slice($argv, 1)), $_GET);
+}
 (new script())->request();
