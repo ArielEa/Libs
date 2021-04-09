@@ -2,6 +2,11 @@
 
 namespace MethodRequest\Qimen;
 
+if(strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false){
+    echo "error";
+    exit;
+}
+
 // 自动加载
 //include_once "./src/autoload.php";
 

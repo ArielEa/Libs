@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php
+## todo: 本文件仅限本地启动
+date_default_timezone_set("Asia/Shanghai"); // 时间区域设置
+
+require_once "app/config.php";
+
+exec(LIBS_COMMAND);

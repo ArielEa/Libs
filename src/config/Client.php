@@ -2,6 +2,11 @@
 
 namespace MethodRequest\config;
 
+$fromurl = "http://localhost:8081/";
+if( $_SERVER['HTTP_REFERER'] == "" ) {
+    header("Location:".$fromurl); exit;
+}
+
 /**
  * 集中处理请求
  * Class Client
