@@ -9,6 +9,7 @@ function openpath(string $path="./src", string $exten = '*' ,bool $ifchild = tru
 {
     $defaultIgnoreFile = [ 'autoload.php', 'openPath.php', 'composer.json', 'composer.lock', 'script.php'];
     static $file_array = []; // file name
+    static $file_names = [];
     static $path_array = []; // file path
     $path = preg_replace('/(.*)([^\/])$/', '$1$2/', $path);
     if(is_dir($path)){
@@ -23,11 +24,13 @@ function openpath(string $path="./src", string $exten = '*' ,bool $ifchild = tru
                     $name = strrchr($_file, '.');
                     if ($name == '.php' && !in_array($_file, $defaultIgnoreFile)) {
                         array_push($file_array, $path.$_file);
+                        array_push($file_names, $_file);
                         array_push($path_array, $path);
                     }
                 } else {
                     if(preg_match('/(.*)'.$exten.'/', '/'.$_file.'/')){
                         array_push($file_array, $path.$_file);
+                        array_push($file_names, $_file);
                         array_push($path_array, $path);
                     }
                 }
@@ -35,5 +38,9 @@ function openpath(string $path="./src", string $exten = '*' ,bool $ifchild = tru
         }
         closedir($H);
     }
-    return $file_array;
+    return [
+        'files_path' => $path_array,
+        'file_array' => $file_array,
+        'file_names' => $file_names
+    ];
 }

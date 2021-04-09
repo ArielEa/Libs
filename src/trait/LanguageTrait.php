@@ -1,6 +1,8 @@
 <?php
 
-namespace MethodRequest\trait;
+namespace Libs\trait;
+
+use Libs\config\IoException;
 
 trait LanguageTrait
 {

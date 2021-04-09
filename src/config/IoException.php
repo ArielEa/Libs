@@ -1,6 +1,6 @@
 <?php
 
-namespace MethodRequest\config;
+namespace Libs\config;
 
 use Throwable;
 

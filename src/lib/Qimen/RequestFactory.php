@@ -1,6 +1,6 @@
 <?php
 
-namespace MethodRequest\lib\Qimen;
+namespace Libs\lib\Qimen;
 
 class RequestFactory
 {

@@ -46,3 +46,19 @@ if (!function_exists('xmlParsing'))
         return $values;
     }
 }
+
+
+if (!function_exists('lib_dump')) {
+    /**
+     * - i.e. 断点调试
+     * - e.g.
+     *
+     * @param mixed ...$args
+     */
+    function lib_dump(...$args)
+    {
+        $trace = debug_backtrace();
+        dump($trace[0]['file'].': '.$trace[0]['line'], ...$args);
+        die;
+    }
+}

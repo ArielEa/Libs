@@ -1,0 +1,5 @@
+# 全部控制器都放在HTTP目录下
+api:
+  resource: "ApiController/Controllers/DefaultController"
+  prefix: api
+  method: indexAction

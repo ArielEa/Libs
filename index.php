@@ -1,7 +1,5 @@
 <?php
 
-namespace MethodRequest\Qimen;
-
 if(strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false){
     echo "error";
     exit;
@@ -12,11 +10,11 @@ if(strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false){
 
 require 'vendor/autoload.php';
 
-use MethodRequest\config\IoException;
-use MethodRequest\config\MethodExplain;
-use MethodRequest\lib\Qimen\RequestFactory;
-use MethodRequest\public\IoResponse;
-use MethodRequest\trait\LanguageTrait;
+use Libs\config\IoException;
+use Libs\config\MethodExplain;
+use Libs\lib\Qimen\RequestFactory;
+use Libs\public\IoResponse;
+use Libs\trait\LanguageTrait;
 
 class script
 {

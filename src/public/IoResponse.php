@@ -1,6 +1,6 @@
 <?php
 
-namespace MethodRequest\public;
+namespace Libs\public;
 
 class IoResponse
 {

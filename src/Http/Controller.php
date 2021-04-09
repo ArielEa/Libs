@@ -4,6 +4,10 @@ namespace Libs\Http;
 
 use Libs\Interface\ControllerInterface;
 
+/**
+ * Class Controller
+ * @package Libs\Http
+ */
 class Controller implements ControllerInterface
 {
     public $redis;
@@ -12,7 +16,8 @@ class Controller implements ControllerInterface
 
     public $container;
 
-    public function __construct() {}
+    public function __construct() {
+    }
 
     public function __get(string $name)
     {
@@ -39,9 +44,11 @@ class Controller implements ControllerInterface
         // TODO: Implement getParameters() method.
     }
 
-    public function getConn(string $defaultDbName)
+    public function getConn(string $defaultDbName = 'product')
     {
-        // TODO: Implement getConn() method.
+        $this->conn = new \Doctrine\DBAL\Driver\PDO\Connection(
+            "mysql:localhost:3306;dbname={$defaultDbName}", 'root', 'eternal673770'
+        );
     }
 
     public function getRedis(string $redisConnect)
