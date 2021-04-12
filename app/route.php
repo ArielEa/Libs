@@ -8,7 +8,7 @@ define('ROUTE_DIR', __DIR__."/../src/");
 define("DEFAULT_CLASS", "\Libs\\");
 
 $routingFile = file_get_contents(__DIR__."/route/route.yml");
-
+// yaml解析，需要安装php yaml
 $routing = yaml_parse($routingFile);
 
 if (empty($routing)) {
@@ -44,7 +44,7 @@ $routeArr = $_SERVER['REQUEST_URI'];
  * 第二个路由
  */
 $phpmodel = php_sapi_name();
-if ($routeArr == '/' || $phpmodel != "cli-server") {
+if ($routeArr == '/' || !in_array($phpmodel, ["cli-server", "fpm-fcgi"])) {
     $routeArr = $defaultTargetRoute;
 }
 $routeArr = substr($routeArr, 1);
