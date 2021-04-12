@@ -3,13 +3,10 @@ if(strpos($_SERVER['SCRIPT_NAME'], 'index.php') === false){
     echo "error";
     exit;
 }
-
+require_once "Yaml.php";
 define('ROUTE_DIR', __DIR__."/../src/");
 define("DEFAULT_CLASS", "\Libs\\");
-
-$routingFile = file_get_contents(__DIR__."/route/route.yml");
-// yaml解析，需要安装php yaml
-$routing = yaml_parse($routingFile);
+$routing = Yaml::explain('routing.yml');
 
 if (empty($routing)) {
     return false; // 后续编写页面
