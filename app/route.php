@@ -59,6 +59,7 @@ $targetRoute = isset($routers[1]) ? $routers[1]."Action" : $route['method'];
 $resource = $route['resource'];
 $path = $route['path'];
 $filePath = ROUTE_DIR.$path."/{$resource}";
+
 $files = openpath($filePath);
 if (empty($files)) {
     echo '5.error';die(null); // 文件Controller错误， 没有文件
