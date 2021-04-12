@@ -1,6 +1,6 @@
 <?php
 
-namespace MethodRequest\config;
+namespace Libs\config;
 
 $fromurl = "http://localhost:8081/";
 if( $_SERVER['HTTP_REFERER'] == "" ) {

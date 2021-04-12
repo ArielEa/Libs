@@ -8,11 +8,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
 {
-    /**
-     * @return Response
-     */
     public function indexAction(): Response
     {
-        return new JsonResponse();
+        lib_dump('Http Host');
+        return new JsonResponse(123);
     }
 }

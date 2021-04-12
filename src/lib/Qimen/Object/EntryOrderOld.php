@@ -1,7 +1,7 @@
 <?php
-namespace MethodRequest\lib\Qimen\Object;
+namespace Libs\lib\Qimen\Object;
 
-use MethodRequest\config\Client;
+use Libs\config\Client;
 
 /**
  * - [ 入库单模版 ]

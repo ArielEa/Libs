@@ -1,6 +1,6 @@
 <?php
 
-namespace MethodRequest\trait;
+namespace Libs\trait;
 
 Trait ClientTrait
 {

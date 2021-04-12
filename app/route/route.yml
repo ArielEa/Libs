@@ -1,5 +1,14 @@
 # 全部控制器都放在HTTP目录下
 api:
-  resource: "ApiController/Controllers/DefaultController"
+  resource: "ApiController/Controllers/"
   prefix: api
+  method: index # 默认编辑器
+  path: Http
+  default: true # 默认
+
+tool:
+  resource: "ToolController/Controllers/DefaultController"
+  prefix: tool
   method: indexAction
+  path: Http
+  default: false

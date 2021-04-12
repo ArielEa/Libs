@@ -1,8 +1,8 @@
 <?php
 
-namespace MethodRequest\lib\Qimen\Object;
+namespace Libs\lib\Qimen\Object;
 
-use MethodRequest\lib\RequestInterface;
+use Libs\lib\RequestInterface;
 
 class Base implements RequestInterface
 {

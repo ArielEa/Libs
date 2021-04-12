@@ -1,6 +1,6 @@
 <?php
 
-namespace MethodRequest\component\DependencyInjection;
+namespace Libs\component\DependencyInjection;
 
 /**
  * Libs 获取服务类或者服务配置

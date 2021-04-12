@@ -3,6 +3,8 @@
 namespace Libs\Http;
 
 use Libs\Interface\ControllerInterface;
+use Libs\public\RequestStack;
+use Libs\public\SqlConnection;
 
 /**
  * Class Controller
@@ -12,11 +14,21 @@ class Controller implements ControllerInterface
 {
     public $redis;
 
+    /**
+     * @var SqlConnection
+     */
     public $conn;
 
     public $container;
 
+    /**
+     * @var RequestStack
+     */
+    public $getRequest;
+
     public function __construct() {
+        $this->getRequest = new RequestStack();
+        $this->conn = new SqlConnection();
     }
 
     public function __get(string $name)
@@ -56,13 +68,13 @@ class Controller implements ControllerInterface
         // TODO: Implement getRedis() method.
     }
 
-    public function container(string $name)
-    {
-        // TODO: Implement container() method.
-    }
-
     public function __destruct()
     {
         // TODO: Implement __destruct() method.
+    }
+
+    public function getRequest()
+    {
+        return $this;
     }
 }

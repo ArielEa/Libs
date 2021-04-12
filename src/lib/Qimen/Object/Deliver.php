@@ -1,6 +1,6 @@
 <?php
 
-namespace MethodRequest\lib\Qimen\Object;
+namespace Libs\lib\Qimen\Object;
 
 /**
  * 批量完成发货单任务进程

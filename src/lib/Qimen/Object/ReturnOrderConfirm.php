@@ -1,8 +1,8 @@
 <?php
 
-namespace MethodRequest\lib\Qimen\Object;
+namespace Libs\lib\Qimen\Object;
 
-use MethodRequest\config\Client;
+use Libs\config\Client;
 /**
  * Class ReturnOrderConfirm
  * @package MethodRequest\Qimen
