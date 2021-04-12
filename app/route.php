@@ -43,8 +43,8 @@ $routeArr = $_SERVER['REQUEST_URI'];
  * 第一个路由为目录地址, 第二个第三个才是
  * 第二个路由
  */
-
-if ($routeArr == '/') {
+$phpmodel = php_sapi_name();
+if ($routeArr == '/' || $phpmodel != "cli-server") {
     $routeArr = $defaultTargetRoute;
 }
 $routeArr = substr($routeArr, 1);
@@ -57,7 +57,6 @@ $routers = explode('/', $routeArr);
 if (!isset($routers[0], $routing)) {
     echo '4.error';die(null); // 路由错误。 后期写错误页面
 }
-
 $route = $routing[$routers[0]];
 $targetRoute = isset($routers[1]) ? $routers[1]."Action" : $route['method'];
 $resource = $route['resource'];
