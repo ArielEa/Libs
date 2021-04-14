@@ -1,0 +1,42 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Libs\\": "./src"
+        },
+        "files": [
+            "bin/serve.php",
+            "bin/console.php"
+        ]
+    },
+    "require": {
+        "psr/http-message": "^1.0",
+        "php-http/client-common": "^2.3",
+        "sendgrid/php-http-client": "^3.14",
+        "guzzlehttp/guzzle": "^7.3",
+        "twbs/bootstrap": "^4.6",
+        "phpoffice/phpspreadsheet": "^1.17",
+        "illuminate/validation": "^5.8.36",
+        "symfony/debug": "^4.4",
+        "doctrine/dbal": "^3.0",
+        "symfony/var-dumper": "^5.2",
+        "friendsofphp/php-cs-fixer":"*"
+    },
+    "post-update-cmd": [
+        "rm -rf web/public/static/bootstrap",
+        "mkdir -p web/public/static/bootstrap",
+        "cp -R vendor/twbs/bootstrap/dist public/static/bootstrap",
+        "rm -rf vendor/twbs"
+    ],
+    "post-install-cmd": [
+        "rm -rf web/public/static/bootstrap",
+        "mkdir -p web/public/static/bootstrap",
+        "cp -R vendor/twbs/bootstrap/dist public/static/bootstrap",
+        "rm -rf vendor/twbs"
+    ],
+    "config": {
+        "optimize-autoloader": true
+    }
+}
