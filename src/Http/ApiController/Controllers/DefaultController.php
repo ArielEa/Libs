@@ -37,7 +37,7 @@ class DefaultController extends Controller
 
 //        $sql = $queryBuilder->getSQL();
 
-        $result = $queryBuilder->execute()->fetchAll();
+//        $result = $queryBuilder->execute()->fetchAll();
 
         lib_dump('Http Host');
         return new JsonResponse(123);
