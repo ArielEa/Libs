@@ -1,12 +1,8 @@
 #!/usr/bin/env php
 <?php
 ## todo: 本文件仅限本地启动
-//date_default_timezone_set("Asia/Shanghai"); // 时间区域设置
-
+date_default_timezone_set("Asia/Shanghai"); // 时间区域设置
 require_once "app/config.php";
+require_once "bin/console.php";
 
-$indexPath = dirname(__FILE__).'/web/public/index.php';
-
-define('LIBS_COMMAND', 'php -S '.DEFAULT_ADDRESS. " {$indexPath}");
-
-exec(LIBS_COMMAND);
+console::serve("serve");
